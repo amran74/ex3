@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= movie.title %> – Rancid Tomatoes</title>
+    <link rel="stylesheet" href="/movie.css" type="text/css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header class="banner">
+        <img src="/bannerbg.png" alt="Background" class="banner-bg">
+        <img src="/banner.png" alt="Banner" class="banner-img">
+    </header>
+
+    <h1 class="main-title"><%= movie.title %> (<%= movie.year %>)</h1>
+
+    <main class="container">
+        <div class="content-wrapper">
+
+            <!-- Left Section: Rating + Reviews -->
+            <div class="reviews-container">
+                <div class="rating">
+                    <img src="<%= movie.score >= 60 ? '/freshbig.png' : '/rottenbig.png' %>" alt="Rating" class="rating-icon">
+                    <div class="rating-percentage"><%= movie.score %>%</div>
+                </div>
+
+                <div class="reviews">
+                    <% if (reviews.length > 0) { %>
+                        <% for (let i = 0; i < reviews.length; i += 2) { %>
+                            <div class="review-row">
+                                <% if (i < reviews.length) { %>
+                                    <div class="review-container">
+                                        <div class="review">
+                                            <blockquote>"<%= reviews[i].comment || 'No Review Available' %>"</blockquote>
+                                        </div>
+                                        <p class="critic-info">
+                                            <img src="/critic.gif" alt="Critic Icon">
+                                            <strong><%= reviews[i].critic || 'Unknown Critic' %></strong> <br>
+                                            <span><%= reviews[i].publication || 'No Affiliation' %></span>
+                                        </p>
+                                    </div>
+                                <% } %>
+
+                                <% if (i + 1 < reviews.length) { %>
+                                    <div class="review-container">
+                                        <div class="review">
+                                            <blockquote>"<%= reviews[i+1].comment || 'No Review Available' %>"</blockquote>
+                                        </div>
+                                        <p class="critic-info">
+                                            <img src="/critic.gif" alt="Critic Icon">
+                                            <strong><%= reviews[i+1].critic || 'Unknown Critic' %></strong> <br>
+                                            <span><%= reviews[i+1].publication || 'No Affiliation' %></span>
+                                        </p>
+                                    </div>
+                                <% } %>
+                            </div>
+                        <% } %>
+                    <% } else { %>
+                        <p>No reviews available.</p>
+                    <% } %>
+                </div>
+
+                <div class="review-footer">
+                    (1-<%= reviews.length %>) of <%= reviews.length %>
+                </div>
+            </div>
+
+            <!-- Right Section: Poster + Movie Details -->
+            <aside class="right-column">
+                <img src="/posters/<%= movie.title.replace(/\s+/g, '') %>.jpg" alt="Movie Poster" class="poster">
+                <dl class="movie-details">
+                    <dt>Starring:</dt>
+                    <dd>
+                        <ul class="starring-list">
+                            <% movie.stars.forEach(star => { %>
+                                <li><%= star %></li>
+                            <% }); %>
+                        </ul>
+                    </dd>
+                    <dt>Director:</dt>
+                    <dd><%= movie.director %></dd>
+                    <dt>Genre:</dt>
+                    <dd><%= movie.genre %></dd>
+                    <dt>Runtime:</dt>
+                    <dd><%= movie.runtime %></dd>
+
+                    <dt>Box Office:</dt>
+                    <dd><%= movie.boxOffice !== "⚠️ Not Provided" ? "$" + movie.boxOffice : movie.boxOffice %></dd>
+
+                    <dt>MPAA Rating:</dt>
+                    <dd><%= movie.mpaaRating !== "⚠️ Not Provided" ? movie.mpaaRating : "Not Available" %></dd>
+
+                    <dt>Release Company:</dt>
+                    <dd><%= movie.releaseCompany !== "⚠️ Not Provided" ? movie.releaseCompany : "Not Available" %></dd>
+
+                    <dt>Movie Synopsis:</dt>
+                    <dd><%= movie.synopsis !== "⚠️ Not Provided" ? movie.synopsis : "No Synopsis Available" %></dd>
+
+                    <dt>External Links:</dt>
+                    <dd>
+                        <a href="<%= movie.links.official %>" target="_blank">Official Site</a> |
+                        <a href="<%= movie.links.rt %>" target="_blank">RT Review</a> |
+                        <a href="<%= movie.links.imdb %>" target="_blank">IMDB Home</a>
+                    </dd>
+                </dl>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Rancid Tomatoes. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

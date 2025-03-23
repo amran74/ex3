@@ -1,0 +1,596 @@
+
+/* amran hamam 212132096
+nagham hasan 214035891
+fatma tabash 325469971 */ 
+body {
+    font-family: Verdana, Calibri, sans-serif;
+    font-size: 1rem;
+    background-image: url('background.png');
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+    min-height: 150vh; /* Increase overall page height */
+}
+
+/* Banner Section */
+.banner {
+    height: 4rem; 
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: url('bannerbg.png') repeat-x;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-img {
+    height: 90px;
+    width: auto;
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Title Styling */
+.main-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 2px 2px #999999;
+    background-image: url('background.png'); /* Add background image */
+    background-repeat: repeat;  /* Ensure it repeats */
+    padding: 15px 5%; /* Maintain padding for content */
+    margin: 20px auto;
+    width: 90%;
+    display: block;
+    border-radius: 10px; /* Slight rounding for a smoother look */
+    background-size: auto; /* Keeps the image as-is without stretching */
+    border: none; /* Removes any existing border */
+}
+
+/* Increase container size */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 95%;
+    margin: 0 auto; /* Centers perfectly */
+    padding: 0;
+    position: relative;
+}
+
+
+/* Content Wrapper (Reviews + Movie Details in Same Box) */
+/* Content Wrapper (Reviews + Movie Details in Same Box) */
+/* Content Wrapper (Reviews + Movie Details in Same Box) */
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    background-color: #E3DAA3;
+    background-image: url('background.png');
+    background-repeat: repeat;
+    padding: 0;
+    border-radius: 20px;
+    position: relative;
+    min-height: 145vh;
+    box-sizing: border-box;
+    border-left: 3px solid #666;
+}
+
+/* Left Section: Reviews */
+.reviews-container {
+    width: 74%;
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid #333; 
+    border-top-left-radius: 20px; /* Round top */
+    border-bottom-left-radius: 40px;
+}
+
+/* Rating Section */
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: url('rbg.png') repeat-x;
+    padding: 1rem;
+    border-radius: 20px 0 0 0; /* Smooth round top */
+    background-color: #4A662C;
+    border-top: 3px solid #666; /* Ensures perfect alignment */
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.rating-icon {
+    height: 50px;
+    width: auto;
+}
+
+.rating-percentage {
+    font-size: 3rem;
+    font-weight: bold;
+    color: red;
+}
+
+/* Reviews Grid */
+.reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 0;
+}
+
+.review-footer {
+    display: flex;
+    justify-content: center; /* Centers text */
+    align-items: center;
+    padding-left: 2rem; /* Adjust text position slightly right */
+    font-size: 1rem; /* Increase text size */
+    font-weight: bold;
+    background-color: #5D8B3E;
+    color: white;
+    border-radius:0 0 40px 40px;
+    width: 76%; /* Slightly increase width */
+    height: 2.5rem; /* Increase height to make it bigger */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+
+
+
+
+
+
+
+/* Individual Review Styling */
+.review {
+    background-color: #E3DAA3; /* Light beige background */
+    border: 2px solid #bbb; /* 2px border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 8px; /* Space inside the review boxes */
+    position: relative; /* Ensures the icon aligns properly */
+}
+
+/* Fresh/Rotten Icons */
+.icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+/* Critic Information (Now Below the Review) */
+.critic-info {
+    display: block; /* Moves the author below */
+    text-align: left;
+    font-style: italic;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+/* Right Column (Poster + Movie Details) */
+/* Right Column (Poster + Movie Details) */
+.right-column {
+    width: 24%;
+    text-align: center;
+    background-color: #5D8B3E;
+    padding: 0; /* Ensure no spacing */
+    margin: 0;
+    border-radius: 12px; /* Ensure only the top corners are rounded */
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: none; /* Remove any existing border */
+    border-radius: 0 40px 0 40px; /* Match the rounded top corners of the container */
+    padding-bottom: 2rem;
+    border-bottom-left-radius: 40px; /* Rounded bottom left */
+    border-bottom-right-radius: 40px;
+}
+
+/* Keep the poster in its natural size and ensure it's at the top-right */
+.poster {
+    width: 100%; /* Ensure the image takes up the full width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove any unwanted margin */
+    padding: 0; /* Remove padding around the image */
+    object-fit: cover; /* Ensures the image fills the container without stretching */
+    border-radius: 0 40px 0 0; /* Match the rounded top corners of the container */
+}
+
+/* Movie Details Styling */
+.movie-details {
+    width: 100%;
+    padding: 1rem;
+    background-color: #5D8B3E;
+    color: #F1F1E4;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Movie Details Formatting */
+.movie-details dt {
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* REMOVE ALL DIVIDERS */
+.movie-details dt {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.movie-details dd {
+    display: block; /* Forces each item to be on a new line */
+    margin-left: 0; /* Aligns text properly under headings */
+    padding-bottom: 5px; /* Adds spacing for readability */
+}
+
+
+/* ADD SINGLE FULL-WIDTH LINE UNDER "DIRECTOR" */
+.movie-details dt:nth-of-type(2) {
+    position: relative;
+}
+
+/* Create a full-width line across the entire page */
+.movie-details dt:nth-of-type(2)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100vw; /* Extend across entire viewport width */
+    border-bottom: 1px solid white;
+    top: 100%;
+}
+
+/* Links Styling */
+.movie-details a {
+    display: block;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+    color: #0044cc;
+    font-weight: bold;
+}
+
+/* Extend green section fully to bottom */
+.right-column::after {
+    content: "";
+    display: block;
+    height: 50px;
+    width: 100%;
+    display: none !important; /* Removes any additional green at bottom */
+
+  border-bottom-left-radius: 20px; /* Rounded bottom left */
+    border-bottom-right-radius: 20px; /* Rounded bottom right */
+    overflow: hidden; }
+
+/* Footer */
+.footer {
+    
+    text-align: center;
+    color: #F1F1E4;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    border-radius: 0 40px 40px 40px;
+}
+
+/* 🟢 MOBILE RESPONSIVENESS */
+@media screen and (max-width: 786px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .reviews-container {
+        width: 100%;
+    }
+
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+
+    .right-column {
+        width: 100%;
+    }
+
+    .poster {
+        width: 100%;
+        height: auto;
+    }
+
+    .movie-details {
+        text-align: center;
+    }
+}
+.movie-details {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: #5D8B3E;
+    color: #F1F1E4;
+    font-size: 0.9rem;
+    line-height: 1.8; /* Improves readability */
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Ensures proper vertical layout */
+    gap: 1.2rem; /* Adds spacing between each section */
+}
+
+/* ✅ Make Section Titles Look Stronger */
+.movie-details dt {
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid white; /* Adds separation */
+}
+
+/* ✅ Make Items Appear in a Proper List */
+.movie-details dd {
+    margin: 0;
+    padding-left: 1rem; /* Small indent */
+    font-size: 0.9rem;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column; /* Ensures each name is listed properly */
+}
+
+/* ✅ Fix Links Styling */
+.movie-details a {
+    display: block;
+    color: #0044cc;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: 0.3rem;
+}
+
+/* ✅ Add Curved Bottom to Match the Example */
+.right-column {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+/* Fix "Starring" list to be vertical WITHOUT bullets */
+.starring-list {
+    list-style: none; /* Removes the bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Ensures names appear in a vertical list */
+    gap: 0.4rem; /* Adds space between names */
+}
+/* Remove all bottom borders inside .movie-details */
+.movie-details dt {
+    border-bottom: none !important; /* Removes all lines */
+}
+
+/* Keep ONLY the line under "Director" */
+.movie-details dt:nth-of-type(2) {
+    position: relative;
+}
+
+.movie-details dt:nth-of-type(2)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%; /* Makes the line stretch across */
+    border-bottom: 1px solid white; /* Keep the line */
+    top: 100%;
+}
+/* Make all review text uppercase */
+.review blockquote {
+    font-weight: bold;
+}
+.movie-details {
+    padding: 0.5rem; /* Reduce padding */
+    font-size: 1rem; /* Keep text readable but more compact */
+    line-height: 1.2; /* Reduce line spacing */
+}
+/* Reduce spacing between each movie detail entry */
+.movie-details dt {
+    margin-bottom: 0.1rem; /* Less space between titles */
+    padding-bottom: 0; /* Remove extra padding */
+    font-size: 1rem; /* Slightly smaller font */
+}
+
+/* Reduce spacing between each description */
+.movie-details dd {
+    margin-bottom: 0.2rem; /* Minimal spacing between each description */
+    padding-bottom: 0; /* Remove extra padding */
+    font-size: 1rem; /* Slightly smaller font */
+    line-height: 1.1; /* Reduce vertical spacing */
+}
+
+/* Make the links section more compact */
+.movie-details a {
+    margin-top: 0.1rem; /* Less space between links */
+    font-size: 1rem; /* Keep links readable */
+}
+
+/* Reduce right column height by limiting padding on bottom */
+.right-column::after {
+    display: none; /* Remove unnecessary bottom padding */
+}
+
+/* Reduce spacing around the entire movie details box */
+.movie-details {
+    padding: 0.5rem 0.8rem; /* Shrink padding */
+}
+
+
+.reviews {
+    padding: 0.5rem; /* Add small padding around reviews */
+    margin: 0.5rem; /* Add spacing from container */
+    
+}
+.critic-info {
+    margin-top: 0.3rem; /* Smaller margin between the author and their comment */
+}
+.critic-info {
+    display: flex;
+    flex-direction: column; /* Ensures name appears first, then title below */
+    align-items: flex-start; /* Aligns everything to the left */
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: bold;
+    margin-left: 1.8rem; /* Pushes the author name slightly right */
+    line-height: 1.2;
+}
+
+.critic-info span {
+    display: block; /* Makes sure title appears below the name */
+    font-weight: normal; /* Normal font weight for the title */
+    font-style: normal; /* Removes italics for the alignment */
+}
+/* Reduce space between review containers */
+.reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem; /* Reduced gap between reviews */
+    margin-top: 0;
+}
+
+/* Reduce margin between critic info and review */
+.review-container {
+    margin-bottom: 0.5rem; /* Reduced spacing between reviews */
+}
+.review-container img.icon {
+    position: absolute;
+    top: 10px;
+    left: 5px; /* Ensures 5px space from left */
+    width: 20px; /* Adjust if needed */
+    height: auto;
+}
+.review blockquote {
+    margin-left: 30px; /* Moves text slightly right to avoid overlapping icon */
+}
+
+/* Adjust the spacing inside the review boxes */
+.review {
+    padding: 0.8rem; /* Slightly reduced padding */
+}
+
+.critic-info {
+    display: flex;
+    flex-direction: column; /* Ensures name is on top, title below */
+    align-items: flex-start; /* Aligns text to the left */
+    margin-top: 0.3rem; /* Reduces space between the review and critic info */
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.critic-info img {
+    width: 20px; /* Keeps icon at a proper size */
+    height: auto;
+    margin-bottom: 2px; /* Reduces space between icon and critic name */
+}
+
+.critic-info span {
+    margin-bottom: 0; /* Removes unnecessary space below critic name */
+}
+
+.critic-info em {
+    display: block; /* Ensures publication is on a new line */
+    margin-top: -2px; /* Brings title closer to name */
+    font-style: normal; /* Removes italic from the publication */
+    font-size: 0.85rem; /* Slightly reduces font size for distinction */
+}
+
+/* Remove bold styling from critic name */
+.critic-info span {
+    display: block; /* Ensures name and publication are stacked */
+    font-weight: normal !important; /* Force removal of bold */
+}
+
+/* Remove bold styling from em elements inside critic-info */
+.critic-info em {
+    font-weight: normal !important; /* Ensure publication title is not bold */
+    font-style: normal; /* Remove italic if needed */
+}
+/* General Overview Section */
+.general-overview {
+    background-color: #5D8B3E; /* Green background */
+    width: 25%; /* Takes up 25% of the width */
+    font-family: Calibri, sans-serif; /* Font type */
+    color: #F1F1E4DA; /* Light text color */
+    padding: 1.5rem; /* Padding inside */
+    text-align: left; /* Ensures text is left-aligned */
+}
+
+.general-overview h2 {
+    font-weight: bold; /* Makes the title stand out */
+    font-size: 1.5rem; /* Ensures a readable size */
+    margin-bottom: 1rem; /* Adds space below the title */
+}
+/* Movie Details Styling */
+/* Reduce spacing between sections */
+.movie-details dt {
+    margin-top: 0.2rem; /* Reduce space above section headers */
+}
+
+.movie-details dd {
+    margin-bottom: 0.2rem; /* Reduce space below each item */
+    line-height: 1.2; /* Reduce line spacing */
+}
+
+/* Fix Links Spacing */
+.movie-details dd a {
+    display: inline-block; /* Ensures links stay close together */
+    margin-top: 0.2rem; /* Reduce space between links */
+    font-size: 0.9rem; /* Ensure text isn't too large */
+}
+
+/* Footer Section */
+.review-footer {
+    background-color: #5D8B3E; /* Green background */
+    font-size: 1rem; /* Makes the text slightly smaller */
+    font-weight: bold; /* Ensures the text is bold */
+    color: white; /* White text for contrast */
+    text-align: center; /* Centers text */
+    padding: 0.5rem; /* Spacing inside the footer */
+    border-radius: 0 0 12px 12px; /* Rounded bottom corners */
+}
+
+/* Links inside the Footer */
+.review-footer a {
+    color: darkblue; /* Ensures links are dark blue */
+    text-decoration: underline; /* Makes links more visible */
+}
+.movie-details dt:last-of-type {
+    margin-bottom: 0.1rem; /* Reduce spacing below the "LINKS" header */
+}
+
+
+
+
+
+
+
